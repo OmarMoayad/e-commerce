@@ -7,4 +7,13 @@ const axiosInstance = axios.create({
     },
 })
 
-export default axiosInstance; 
+const axiosInstanceWithToken = axios.create({
+    baseURL: `${import.meta.env.VITE_BURL}`,
+    headers: {
+        "Accept-Language": "en",
+        "Authorization": `Bearer ${localStorage.getItem("token")}`,
+    },
+})
+
+export default axiosInstanceWithToken;
+export {axiosInstance};

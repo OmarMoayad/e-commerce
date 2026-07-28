@@ -2,22 +2,12 @@ import React, { useEffect } from 'react'
 import axiosInstance from '../../API/axiosInstance'
 import { useQuery } from '@tanstack/react-query'
 import { CircularProgress, Typography ,Box} from '@mui/material'
+import useCategories from '../../hooks/useCategories'
 
 
 
 export default function Categories() {
-
-
-    const getCategories = async () => {
-        const response = await axiosInstance.get("/Categories")
-        return response.data;
-    }
-
-    const { data, isLoading, isError, error } = useQuery({
-        queryKey: ["categories"],
-        queryFn: getCategories,
-        staleTime: 1000 * 60 * 5
-    })
+    const { data, isLoading, isError, error } = useCategories();
 
     if (isLoading) {
         return <CircularProgress />
@@ -29,7 +19,7 @@ export default function Categories() {
     return (
         <>
             {data.response.data.map((category) => (
-                <Box>
+                <Box key={category.id}>
                     <Typography variant="h5">{category.name}</Typography>
                 </Box>
             ))}
