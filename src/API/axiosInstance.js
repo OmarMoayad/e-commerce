@@ -1,4 +1,5 @@
 import axios from "axios";
+import useAuthStore from "../auth/useAuthStore";
 
 const axiosInstance = axios.create({
     baseURL: `${import.meta.env.VITE_BURL}`,
@@ -7,11 +8,12 @@ const axiosInstance = axios.create({
     },
 })
 
+
 const axiosInstanceWithToken = axios.create({
     baseURL: `${import.meta.env.VITE_BURL}`,
     headers: {
         "Accept-Language": "en",
-        "Authorization": `Bearer ${localStorage.getItem("token")}`,
+        "Authorization": `Bearer ${useAuthStore.getState().token}`,
     },
 })
 

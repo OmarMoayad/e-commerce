@@ -9,17 +9,21 @@ import axiosInstance from '../../API/axiosInstance';
 import { yupResolver } from "@hookform/resolvers/yup"
 import { loginSchema } from '../../validations/LoginSchema';
 import { useState } from 'react';
+import useAuthStore from '../../auth/useAuthStore';
+import { useNavigate } from 'react-router-dom';
 
 export default function Login() {
   const [serverErrors, setServerErrors] = useState({});
+  const navigate = useNavigate();
 
-
-  const {register,handleSubmit,formState: { errors, isSubmitting }} = useForm({ resolver: yupResolver(loginSchema) });
+  const { register, handleSubmit, formState: { errors, isSubmitting } } = useForm({ resolver: yupResolver(loginSchema) });
+  const setToken = useAuthStore((state) => state.setToken);
 
   const LoginForm = async (data) => {
     try {
       const response = await axiosInstance.post(`/auth/Account/Login`, data);
-      console.log(response);
+      setToken(response.data.accessToken);
+      navigate("/");
     } catch (err) {
       setServerErrors(err.response.data.errors);
     }

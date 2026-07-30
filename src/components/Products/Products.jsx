@@ -6,7 +6,6 @@ import { Link } from 'react-router-dom'
 export default function Products() {
     const { data, isLoading, isError, error } = useProducts();
 
-    console.log(data);
     if (isLoading) {
         return <CircularProgress />
     }
@@ -16,7 +15,7 @@ export default function Products() {
     return (
         <Grid container spacing={2} sx={{justifyContent:"center",alignItems:"center",gap:2}}>
             {data.response.data.map((product) => (
-                <Grid item key={product.id} xs={12} sm={6} md={4}>
+                <Grid key={product.id} size={{ xs: 12, sm: 6, md: 4 }}>
                     <Card sx={{ width: 400 ,textAlign:"center" }}  >
                         <CardMedia component="img" sx={{ width: 200 ,  margin: 'auto'}} image={product.image} alt={product.name} />
                         <CardContent>
