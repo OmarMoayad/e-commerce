@@ -8,6 +8,10 @@ import Cart from "./pages/Cart/Cart";
 import Products from "./components/Products/Products";
 import ProductDetails from "./pages/ProductDetails/ProductDetails";
 import ProtectedRouter from "./ProtectedRouter/ProtectedRouter";
+import Checkout from "./pages/Checkout/Checkout";
+import Profile from "./pages/Profile/Profile";
+import ProfileInfo from "./pages/Profile/ProfileInfo";
+import ProfileOrders from "./pages/Profile/ProfileOrders";
 
 const router = createBrowserRouter([
     {
@@ -39,6 +43,28 @@ const router = createBrowserRouter([
             {
                 path: "/products/:id",
                 element: <ProductDetails />,
+            },
+            {
+                path: "/checkout",
+                element: <ProtectedRouter>
+                    <Checkout />
+                </ProtectedRouter>,
+            },
+            {
+                path: "/profile",
+                element: <ProtectedRouter>
+                    <Profile />
+                </ProtectedRouter>,
+                children: [
+                    {
+                        index: true,
+                        element: <ProfileInfo />,
+                    },
+                    {
+                        path: "orders",
+                        element: <ProfileOrders />,
+                    }
+                ]
             }
         ],
     },

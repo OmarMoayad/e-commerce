@@ -6,6 +6,7 @@ import { CircularProgress, Typography,Box ,Button } from '@mui/material';
 import useUpdateCart from '../../hooks/useUpdateCart';
 import useRemovefromCart from '../../hooks/useRemovefromCart';
 import useClearCart from '../../hooks/useClearCart';
+import { Link } from 'react-router-dom';
 
 
 export default function Cart() {
@@ -39,8 +40,19 @@ export default function Cart() {
           <Button color="error" variant="contained" onClick={() => removeFromCart(item.productId)} >
             Remove
             </Button>
+
         </Box>
       ))}
+        <Link to="/checkout">
+        <Button variant="contained" color="primary" >
+          Procced to check out
+        </Button>
+        </Link>
+        <Link to="/">
+        <Button variant="contained" color="primary" >
+          Continue shopping
+        </Button>
+        </Link>
     </div>
   )
 }
