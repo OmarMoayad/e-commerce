@@ -1,15 +1,17 @@
 import React from 'react'
 import { axiosInstance } from '../API/axiosInstance'
 import { useQuery } from '@tanstack/react-query'
+import { useTranslation } from 'react-i18next'
 
 export default function useCategories() {
+    const { i18n } = useTranslation();
     const getCategories = async () => {
         const response = await axiosInstance.get("/Categories")
         return response.data;
     }
 
     const query = useQuery({
-        queryKey: ["categories"],
+        queryKey: ["categories" , i18n.language],
         queryFn: getCategories,
         staleTime: 1000 * 60 * 5,
     })

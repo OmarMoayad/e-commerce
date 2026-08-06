@@ -2,6 +2,7 @@ import React from 'react'
 import { useMutation, useQueryClient } from '@tanstack/react-query'
 import axiosInstanceWithToken from '../API/axiosInstance'
 
+
 export default function useAddtoCart() {
     const queryClient = useQueryClient();
 
@@ -14,7 +15,7 @@ export default function useAddtoCart() {
             return response;
         },
         onSuccess: () => {
-            queryClient.invalidateQueries({ queryKey: ["cart", 'en'] });
+            queryClient.invalidateQueries({ queryKey: ["cart"] });
         }
     })
 }
