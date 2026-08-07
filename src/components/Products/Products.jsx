@@ -6,6 +6,7 @@ import {
     CircularProgress,
     Grid,
 } from '@mui/material'
+
 import { Link, useSearchParams } from 'react-router-dom'
 
 export default function Products() {

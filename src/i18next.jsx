@@ -22,7 +22,16 @@ i18n
                     "Login": "Login",
                     "Register": "Register",
                     "Logout": "Logout",
-                    "Footer": "Footer"
+                    "Footer": "Footer",
+                    "Write a Review": "Write a Review",
+                    "Cancel": "Cancel",
+                    "Client Reviews": "Client Reviews",
+                    "based on": "based on",
+                    "reviews": "reviews",
+                    "Rating": "Rating",
+                    "Add to Cart": "Add to Cart",
+                    "Submit Review": "Submit Review",
+                    
                 }
             },
             ar: {
@@ -35,12 +44,20 @@ i18n
                     "Login": "تسجيل الدخول",
                     "Register": "تسجيل",
                     "Logout": "تسجيل الخروج",
-                    "Footer": "الاخر"
+                    "Footer": "الاخر",
+                    "Write a Review": "كتابة مراجعة",
+                    "Cancel": "الغاء",
+                    "Client Reviews": "مراجعات العملاء",
+                    "based on": "بناء على",
+                    "reviews": "مراجعات",
+                    "Rating": "التقييم",
+                    "Add to Cart": "اضافة الى السلة",
+                    "Submit Review": "ارسال مراجعة",
                 }
             }
 
         },
-        lng: "en", // if you're using a language detector, do not define the lng option
+        lng: "", // if you're using a language detector, do not define the lng option
         fallbackLng: "en",
 
         interpolation: {

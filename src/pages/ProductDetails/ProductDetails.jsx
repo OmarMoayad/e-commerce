@@ -5,13 +5,30 @@ import { CircularProgress, Typography, Button, Box } from '@mui/material'
 import { Card, CardMedia, CardContent, Grid } from '@mui/material'
 import useAddtoCart from '../../hooks/useAddtoCart'
 import StarIcon from '@mui/icons-material/Star'
+import { useState } from "react";
+import { Dialog, DialogTitle, DialogContent, DialogActions, TextField, Rating } from "@mui/material";
+import useAddReview from '../../hooks/useAddReview'
+import { useTranslation } from "react-i18next";
+
 
 export default function ProductDetails() {
+    const { mutate: addReview } = useAddReview();
+    const { t } = useTranslation();
+
     const { id } = useParams();
     const { data, isLoading, isError, error } = useProduct(id);
     const { mutate: addToCart } = useAddtoCart();
-    console.log(data);
+    const [open, setOpen] = useState(false);
+    const [rating, setRating] = useState(0);
+    const [comment, setComment] = useState("");
 
+    const handleOpen = () => setOpen(true);
+
+    const handleClose = () => {
+        setOpen(false);
+        setRating(0);
+        setComment("");
+    };
 
     if (isLoading) {
         return <CircularProgress />
@@ -34,26 +51,8 @@ export default function ProductDetails() {
                     <Typography variant="h4" sx={{ mb: 3, fontWeight: 600, }}>${data.response.price}</Typography>
                     <Typography color="text.secondary" sx={{ mb: 4, lineHeight: 1.8, }}> {data.response.description} </Typography>
 
-                    <Button
-                        variant="contained"
-                        size="large"
-                        fullWidth
-                        sx={{
-                            py: 1.6,
-                            borderRadius: 1,
-                            bgcolor: "black",
-                            "&:hover": {
-                                bgcolor: "#222",
-                            },
-                        }}
-                        onClick={() =>
-                            addToCart({
-                                productId: data.response.id,
-                                count: 1,
-                            })
-                        }
-                    >
-                        ADD TO CART
+                    <Button variant="contained" size="large" fullWidth sx={{ py: 1.6, borderRadius: 1, bgcolor: "black", "&:hover": { bgcolor: "#222", },}} onClick={() => addToCart({productId: data.response.id, count: 1,})}>
+                        {t("Add to Cart")}
                     </Button>
                 </Grid>
             </Grid>
@@ -63,43 +62,62 @@ export default function ProductDetails() {
                 <Grid size={12} sx={{ display: "flex", justifyContent: "space-between", alignItems: "center", mb: 4, }}>
                     <Box>
                         <Typography variant="h4" fontWeight="bold">
-                            Client Reviews
+                            {t("Client Reviews")}
                         </Typography>
 
                         <Box sx={{ display: "flex", alignItems: "center", gap: 1, mb: 3 }}>
-                            {'★'.repeat(Math.round(data.response.rate || 0))}{'☆'.repeat(5 - Math.round(data.response.rate || 0))}  
-                            <Typography> based on {data.response.reviews.length} reviews</Typography>
+                            {'★'.repeat(Math.round(data.response.rate || 0))}{'☆'.repeat(5 - Math.round(data.response.rate || 0))}
+                            <Typography> {t("based on")} {data.response.reviews.length} {t("reviews")}</Typography>
                         </Box>
                     </Box>
 
-                    <Button
-                        variant="outlined"
-                        sx={{ px: 4, py: 1, color: "black", borderColor: "black", "&:hover": { borderColor: "black", bgcolor: "#f5f5f5", } }}>
-                        Write a Review
+                    <Button variant="outlined" onClick={handleOpen} sx={{ px: 4, py: 1, color: "text.primary", borderColor: "black", "&:hover": { borderColor: "black", bgcolor: "#f5f5f5", }, }}>
+                        {t("Write a Review")}
                     </Button>
                 </Grid>
                 <Grid container spacing={4}>
-                {data.response.reviews.map((user) => (
-                    <Grid key={user.id} size={{ xs: 12, sm: 6, md: 4 }}>
-                        <Card elevation={1} sx={{ height: "100%", borderRadius: 3 }}>
-                            <CardContent>
-                                <Typography variant="h6" fontWeight="bold" sx={{ mb: 2 }}>
-                                    {user.userName}
-                                </Typography>
+                    {data.response.reviews.map((user) => (
+                        <Grid key={user.id} size={{ xs: 12, sm: 6, md: 4 }}>
+                            <Card elevation={1} sx={{ height: "100%", borderRadius: 3 }}>
+                                <CardContent>
+                                    <Typography variant="h6" fontWeight="bold" sx={{ mb: 2 }}>
+                                        {user.userName}
+                                    </Typography>
 
-                                <Typography sx={{ mb: 2, display: "flex", alignItems: "center", gap: 1 }}>
-                                    {user.rating}<StarIcon fontSize="small" sx={{ color: "#ffc107" }} />
-                                </Typography>
+                                    <Typography sx={{ mb: 2, display: "flex", alignItems: "center", gap: 1 }}>
+                                        {user.rating}<StarIcon fontSize="small" sx={{ color: "#ffc107" }} />
+                                    </Typography>
 
-                                <Typography color="text.secondary">
-                                    {user.comment}
-                                </Typography>
-                            </CardContent>
-                        </Card>
-                    </Grid>
-                ))}
+                                    <Typography color="text.secondary">
+                                        {user.comment}
+                                    </Typography>
+                                </CardContent>
+                            </Card>
+                        </Grid>
+                    ))}
                 </Grid>
             </Grid>
+
+            <Dialog open={open} onClose={handleClose} maxWidth="sm" fullWidth>
+                <DialogTitle sx={{ fontWeight: "bold" }}>{t("Write a Review")}</DialogTitle>
+                <DialogContent>
+                    <Box sx={{ mt: 2 }}>
+                        <Typography sx={{ mb: 1 }}>{t("Rating")}</Typography>
+                        <Rating value={rating} precision={1} onChange={(event, newValue) => { setRating(newValue);}}/>
+                    </Box>
+
+                    <TextField fullWidth multiline rows={5} label="Comment" value={comment} onChange={(e) => setComment(e.target.value)} sx={{ mt: 3 }} />
+                </DialogContent>
+                <DialogActions sx={{ p: 2 }}>
+                    <Button sx={{ px: 4, py: 1, color: "text.primary", borderColor: "black", "&:hover": { borderColor: "black", bgcolor: "#f5f5f5", } }} variant="outlined" onClick={handleClose}>{t("Cancel")}</Button>
+                    <Button sx={{ px: 4, py: 1, color: "text.primary", borderColor: "black", "&:hover": { borderColor: "black", bgcolor: "#f5f5f5", } }} variant="outlined" onClick={() => {
+                            addReview({ productId: data.response.id, rating, comment });
+                            handleClose();
+                        }}>
+                        {t("Submit Review")}
+                    </Button>
+                </DialogActions>
+            </Dialog>
         </>
     )
 };
