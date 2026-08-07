@@ -1,73 +1,108 @@
-import React from 'react';
-import Box from '@mui/material/Box';
+import React, { useState } from "react";
+import { AppBar,Toolbar, Container, Box, Link, IconButton, Button, Drawer, List, ListItemButton, ListItemText, useMediaQuery,} from "@mui/material";
+import { useTheme } from "@mui/material/styles";
+import MenuIcon from "@mui/icons-material/Menu";
+import ShoppingBagOutlinedIcon from "@mui/icons-material/ShoppingBagOutlined";
+import PersonOutlineOutlinedIcon from "@mui/icons-material/PersonOutlineOutlined";
+import DarkModeOutlinedIcon from "@mui/icons-material/DarkModeOutlined";
+import LightModeOutlinedIcon from "@mui/icons-material/LightModeOutlined";
+import { Link as RouterLink, useNavigate } from "react-router-dom";
 import logo from "../../assets/logo.png";
-import { Link as RouterLink } from "react-router-dom";
-import Link from "@mui/material/Link";
 import useAuthStore from "../../auth/useAuthStore";
-import { useNavigate } from "react-router-dom";
-import { useTranslation } from "react-i18next";
-import i18n from "../../i18next";
-import { Button } from "@mui/material";
 import themeStore from "../../auth/useThemeStore";
+import { useTranslation } from "react-i18next";
+import Links from "../Links/Links";
+import i18n from "../../i18next";
 
 export default function Navbar() {
-  const token = useAuthStore((state) => state.token);
-  const logout = useAuthStore((state) => state.logout);
-  const { t } = useTranslation();
-    const mode = themeStore((state)=> state.mode);
-        const toggleTheme = themeStore((state)=> state.toggleTheme);
+
+  const mode = themeStore((state) => state.mode);
+  const toggleTheme = themeStore((state) => state.toggleTheme);
   const navigate = useNavigate();
-  const handleLogout = () => {
-    logout();
-    navigate("/login");
-  };
+  const { t } = useTranslation();
+  const token = useAuthStore((state) => state.token);
+  const theme = useTheme();
+  const mobile = useMediaQuery(theme.breakpoints.down("md"));
+
+  const [open, setOpen] = useState(false);
+
   const toggleLanguage = () => {
-    const newLang = i18n.language === "en" ? "ar" : "en";
-    i18n.changeLanguage(newLang);
+    i18n.changeLanguage(i18n.language === "en" ? "ar" : "en");
   };
 
+
   return (
-    <Box component="nav" sx={{ display: "flex", alignItems: "center", gap: 2, p: 2, }}>
-      <img src={logo} alt="logo" width={100} height={100} />
-      <Link component={RouterLink} to="/" sx={{
-        textDecoration: "none", color: "black", "&:hover": {
-          color: "primary.main",
-        }
-      }}>{t("Home")}</Link>
-      {token ? <>
-        <Link component={RouterLink} to="/cart" sx={{
-          textDecoration: "none", color: "black", "&:hover": {
-            color: "primary.main",
-          }
-        }}>{t("Cart")}</Link>
-        <Link onClick={handleLogout} sx={{
-          textDecoration: "none", color: "black", "&:hover": {
-            color: "primary.main",
-          }
-        }}>{t("Logout")}</Link>
-      </> : <>
-        <Link component={RouterLink} to="/login" sx={{
-          textDecoration: "none", color: "black", "&:hover": {
-            color: "primary.main",
-          }
-        }}>{t("Login")}</Link>
-        <Link component={RouterLink} to="/register" sx={{
-          textDecoration: "none", color: "black", "&:hover": {
-            color: "primary.main",
-          }
-        }}>{t("Register")}</Link>
-      </>}
-      <Link component={RouterLink} to="/products" sx={{
-        textDecoration: "none", color: "black", "&:hover": {
-          color: "primary.main",
-        }
-      }}>{t("Shop")}</Link>
-      <Button variant="contained" onClick={toggleLanguage}>
-        {i18n.language === "en" ? t("Arabic") : t("English")}
-      </Button>
-            <Button variant="contained" onClick={toggleTheme}>
-        {i18n.language === "light" ? t("Dark") : t("Light")}
-      </Button>
-    </Box>
+    <>
+      <AppBar position="sticky" elevation={0} color="inherit" sx={{ borderBottom: "1px solid", borderColor: "rgba(72, 72, 72, 0.10)", }} >
+        <Container maxWidth="xl">
+          <Toolbar
+            disableGutters
+            sx={{
+              height: 80,
+              justifyContent: "space-between",
+            }}
+          >
+
+            <Box component={RouterLink} to="/">
+              <img src={logo} alt="Logo" style={{ height: 30 }} />
+            </Box>
+            {!mobile && (
+              <Box sx={{ display: "flex", alignItems: "center", gap: 5 }}>
+                <Links />
+              </Box>
+            )}
+
+            <Box sx={{ display: "flex", alignItems: "center", gap: 1, width: 180, justifyContent: "flex-end", }}>
+              <IconButton component={RouterLink} to="/profile">
+                <PersonOutlineOutlinedIcon />
+              </IconButton>
+              <Button onClick={toggleLanguage} sx={{ minWidth: 40, color: "text.primary", }}> {i18n.language === "en" ? "AR" : "EN"} </Button>
+
+              <IconButton onClick={toggleTheme}>{mode === "light" ? <DarkModeOutlinedIcon /> : <LightModeOutlinedIcon />}</IconButton>
+
+              {mobile && (
+                <IconButton onClick={() => setOpen(true)}>
+                  <MenuIcon />
+                </IconButton>
+              )}
+            </Box>
+          </Toolbar>
+        </Container>
+      </AppBar>
+      
+      <Drawer anchor="right" open={open} onClose={() => setOpen(false)}>
+        <List sx={{ width: 260 }}>
+          <ListItemButton component={RouterLink} to="/" onClick={() => setOpen(false)}>
+            <ListItemText primary={t("Home")} />
+          </ListItemButton>
+
+          <ListItemButton component={RouterLink} to="/products" onClick={() => setOpen(false)}>
+            <ListItemText primary={t("Shop")} />
+          </ListItemButton>
+
+          {token && (
+            <ListItemButton component={RouterLink} to="/cart" onClick={() => setOpen(false)}>
+              <ListItemText primary={t("Cart")} />
+            </ListItemButton>
+          )}
+
+          {!token ? (
+            <>
+              <ListItemButton component={RouterLink} to="/login" onClick={() => setOpen(false)}>
+                <ListItemText primary={t("Login")} />
+              </ListItemButton>
+
+              <ListItemButton component={RouterLink} to="/register" onClick={() => setOpen(false)}>
+                <ListItemText primary={t("Register")} />
+              </ListItemButton>
+            </>
+          ) : (
+            <ListItemButton onClick={() => { handleLogout(); setOpen(false); }}>
+              <ListItemText primary={t("Logout")} />
+            </ListItemButton>
+          )}
+        </List>
+      </Drawer>
+    </>
   );
 }
