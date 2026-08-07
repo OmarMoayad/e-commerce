@@ -52,6 +52,20 @@ i18n
                     "Visa": "Visa",
                     "Cash on Delivery": "Cash on Delivery",
                     "Remove": "Remove",
+                    "profile": "Profile",
+                    "fullName": "Full Name",
+                    "email": "Email",
+                    "phoneNumber": "Phone Number",
+                    "Orders": "Orders",
+                    "Info": "Info",
+                    "Payment Status": "Payment Status",
+                    "Order Status": "Order Status",
+                    "Order Date": "Order Date",
+                    "Amount Paid": "Amount Paid",
+                    "Hello": "Hello",
+                    "Order #": "Order #",
+                    "No orders found.": "No orders found.",
+                    
                 }
             },
             ar: {
@@ -91,6 +105,21 @@ i18n
                     "Visa": "فيزا",
                     "Cash on Delivery":"الدفع عند الاستلام",
                     "Remove": "حذف",
+                    "profile": "الملف الشخصي",
+                    "fullName": "الاسم الكامل",
+                    "email": "البريد الالكتروني",
+                    "phoneNumber": "رقم الهاتف",
+                    "Orders": "الطلبات",
+                    "Info": "المعلومات",
+                    "Payment Status": "حالة الدفع",
+                    "Order Status": "حالة الطلب",
+                    "Order Date": "تاريخ الطلب",
+                    "Amount Paid": "المبلغ المدفوع",
+                    "Hello": "مرحبا",
+                    "Order #": "رقم الطلب",
+                    "No orders found.": "لا يوجد طلبات",
+
+                    
                 }
                 
             }
