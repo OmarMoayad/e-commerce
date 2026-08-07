@@ -8,11 +8,14 @@ import { useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import i18n from "../../i18next";
 import { Button } from "@mui/material";
+import themeStore from "../../auth/useThemeStore";
 
 export default function Navbar() {
   const token = useAuthStore((state) => state.token);
   const logout = useAuthStore((state) => state.logout);
   const { t } = useTranslation();
+    const mode = themeStore((state)=> state.mode);
+        const toggleTheme = themeStore((state)=> state.toggleTheme);
   const navigate = useNavigate();
   const handleLogout = () => {
     logout();
@@ -61,6 +64,9 @@ export default function Navbar() {
       }}>{t("Shop")}</Link>
       <Button variant="contained" onClick={toggleLanguage}>
         {i18n.language === "en" ? t("Arabic") : t("English")}
+      </Button>
+            <Button variant="contained" onClick={toggleTheme}>
+        {i18n.language === "light" ? t("Dark") : t("Light")}
       </Button>
     </Box>
   );
