@@ -73,7 +73,34 @@ i18n
                     "LOGIN": "LOGIN",
                     "REMIX": "REMIX",
                     "EMAIL ADDRESS": "EMAIL ADDRESS",
-                    
+                    "USERNAME": "USERNAME",
+                    "FULL NAME": "FULL NAME",
+                    "PHONE NUMBER": "PHONE NUMBER",
+                    "ALREADY HAVE AN ACCOUNT": "ALREADY HAVE AN ACCOUNT",
+                    "Create your account": "Create your account",
+                    "Don't worry, we've all been there": "Don't worry, we've all been there",
+                    "Send Code": "Send Code",
+                    "Reset Password": "Reset Password",
+                    "New Password": "New Password",
+                    "Confirm Password": "Confirm Password",
+                    "Confirm": "Confirm",
+                    "CODEVERIFICATION": "CODE VERIFICATION",
+                    "Reset Password": "Reset Password",
+                    "New Password": "New Password",
+                    "confirm password": "Confirm Password",
+                    "confirm": "Confirm ",
+                    "All Products": "All Products",
+                    "Showing": "Showing",
+                    "items": "items",
+                    "Clear Filters": "Clear Filters",
+                    "Rating": "Rating",
+                    "Name: A → Z": "Name: A → Z",
+                    "Name: Z → A": "Name: Z → A",
+                    "Price: Low → High": "Price: Low → High",
+                    "Price: High → Low": "Price: High → Low",
+                    "Rating: High → Low": "Rating: High → Low",
+                    "Rating: Low → High": "Rating: Low → High",
+                    "Default": "Default"
                 }
             },
             ar: {
@@ -139,9 +166,38 @@ i18n
                     "CREATE ACCOUNT": "إنشاء حساب",
                     "REMIX": "ريـمـكس",
                     "EMAIL ADDRESS": "البريد الالكتروني",
+                    "USERNAME": "اسم المستخدم",
+                    "FULL NAME": "الاسم الكامل",
+                    "PHONE NUMBER": "رقم الهاتف",
+                    "ALREADY HAVE AN ACCOUNT": "لديك حساب بالفعل",
+                    "Create your account": "أنشئ حسابك",
+                    "Don't worry, we've all been there": "لا تقلق، لقد مررنا جميعًا بهذا",
+                    "Send Code": "ارسال الرمز",
+                    "Reset Password": "إعادة تعيين كلمة المرور",
+                    "New Password": "كلمة المرور الجديدة",
+                    "confirm password": "تأكيد كلمة المرور",
+                    "confirm": "تأكيد ",
+                    "All Products": "جميع المنتجات",
+                    "Showing": "عرض",
+                    "items": "منتجات",
+                    "Clear Filters": "مسح الفلاتر",
+                    "Rating": "التقييم",
+                    "Name: A → Z": "الاسم: أ → ي",
+                    "Name: Z → A": "الاسم: ي → أ",
+                    "Price: Low → High": "السعر: من الأقل إلى الأعلى",
+                    "Price: High → Low": "السعر: من الأعلى إلى الأقل",
+                    "Rating: High → Low": "التقييم: من الأعلى إلى الأقل",
+                    "Rating: Low → High": "التقييم: من الأقل إلى الأعلى",
+                    "Default": "الافتراضي",
+                    
+                    
                     
 
-                    
+
+
+
+
+
                 }
                 
             }

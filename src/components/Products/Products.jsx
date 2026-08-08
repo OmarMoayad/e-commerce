@@ -8,8 +8,10 @@ import {
 } from '@mui/material'
 
 import { Link, useSearchParams } from 'react-router-dom'
+import { useTranslation } from 'react-i18next'
 
 export default function Products() {
+    const { t } = useTranslation();
     const [searchParams] = useSearchParams();
 
     const sortBy = searchParams.get('sortBy');
@@ -46,10 +48,10 @@ export default function Products() {
         <Box>
             <Box sx={{  display: 'flex',  alignItems: 'baseline',justifyContent: 'space-between',mb: 3}}>
                 <Typography variant="h4" component="h1" sx={{ fontWeight: 700, color: 'text.primary' }}>
-                    All Products
+                    {t("All Products")}
                 </Typography>
                 <Typography variant="body2" sx={{ color: 'text.primary', fontWeight: 500 }}>
-                    Showing {products.length} items
+                    {t("Showing")} {products.length} {t("items")}
                 </Typography>
             </Box>
 
@@ -72,7 +74,7 @@ export default function Products() {
                                 </Box>
 
                                 <Typography variant="caption" sx={{ color: 'gray', textTransform: 'uppercase', letterSpacing: 1, fontSize: '0.7rem', mt: 0.25, display: 'block', }}>
-                                    {'★'.repeat(Math.round(product.rate || 0))}{'☆'.repeat(5 - Math.round(product.rate || 0))} &nbsp; Rating {product.rate}/5
+                                    {'★'.repeat(Math.round(product.rate || 0))}{'☆'.repeat(5 - Math.round(product.rate || 0))} &nbsp; {t("Rating")} {product.rate}/5
                                 </Typography>
                             </Box>
                         </Link>

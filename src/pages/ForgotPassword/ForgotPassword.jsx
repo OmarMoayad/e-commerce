@@ -33,13 +33,7 @@ export default function ForgotPassword() {
                     </Box>
                     <Box component="form" onSubmit={handleSubmit(handleSendCode)}>
                         <Typography variant="caption">{t("EMAIL ADDRESS")}</Typography>
-                        <TextField
-                            {...register("email")}
-                            type="email"
-                            fullWidth
-                            margin="normal"
-                            placeholder="name@example.com"
-                        />                        <Button type="submit" fullWidth variant="outlined" sx={{ mt: 2, py: 1.5, color: "text.primary", borderColor: "black", "&:hover": { borderColor: "black", bgcolor: "#f5f5f5", } }}>
+                        <TextField {...register("email")} type="email" fullWidth margin="normal" placeholder="name@example.com" />                        <Button type="submit" fullWidth variant="outlined" sx={{ mt: 2, py: 1.5, color: "text.primary", borderColor: "black", "&:hover": { borderColor: "black", bgcolor: "#f5f5f5", } }}>
                             {t("Send Code")}
                         </Button>
                     </Box>
