@@ -100,7 +100,28 @@ i18n
                     "Price: High → Low": "Price: High → Low",
                     "Rating: High → Low": "Rating: High → Low",
                     "Rating: Low → High": "Rating: Low → High",
-                    "Default": "Default"
+                    "Default": "Default",
+                    "ABOUT REMIX": "ABOUT REMIX",
+                    "Your style, your choice, your Remix.": "Your style, your choice, your Remix.",
+                    "Who We Are": "Who We Are",
+                    "REMIX is an e-commerce platform created to make shopping simple, convenient, and enjoyable. We bring together quality products, modern design, and a smooth shopping experience in one place.": "REMIX is an e-commerce platform created to make shopping simple, convenient, and enjoyable. We bring together quality products, modern design, and a smooth shopping experience in one place.",
+                    "Our Mission": "Our Mission",
+                    "Our mission is to provide customers with a reliable and enjoyable online shopping experience while offering products that combine quality, style, and value.": "Our mission is to provide customers with a reliable and enjoyable online shopping experience while offering products that combine quality, style, and value.",
+                    "Why Choose REMIX?": "Why Choose REMIX?",
+                    "Quality": "Quality",
+                    "Products selected with quality in mind.": "Products selected with quality in mind.",
+                    "Easy Shopping": "Easy Shopping",
+                    "A simple and convenient shopping experience.": "A simple and convenient shopping experience.",
+                    "Customer First": "Customer First",
+                    "Your satisfaction is always our priority.": "Your satisfaction is always our priority.",
+                    "Ready to start shopping?": "Ready to start shopping?",
+                    "SHOP NOW": "SHOP NOW",
+                    "THE ARCHIVE": "THE ARCHIVE",
+                    "COLLECTION": "COLLECTION",
+                    "A curated collection of timeless pieces. Modern design meets quality and style.": "A curated collection of timeless pieces. Modern design meets quality and style.",
+                    "DISCOVER COLLECTION": "DISCOVER COLLECTION",
+                    "Welcome to Remix": "Welcome to Remix",
+                    "Modern design meets quality and style.": "Modern design meets quality and style.",
                 }
             },
             ar: {
@@ -138,7 +159,7 @@ i18n
                     "Complete Order": "اكمال الطلب",
                     "Checkout": "الدفع",
                     "Visa": "فيزا",
-                    "Cash on Delivery":"الدفع عند الاستلام",
+                    "Cash on Delivery": "الدفع عند الاستلام",
                     "Remove": "حذف",
                     "profile": "الملف الشخصي",
                     "fullName": "الاسم الكامل",
@@ -188,18 +209,28 @@ i18n
                     "Price: High → Low": "السعر: من الأعلى إلى الأقل",
                     "Rating: High → Low": "التقييم: من الأعلى إلى الأقل",
                     "Rating: Low → High": "التقييم: من الأقل إلى الأعلى",
-                    "Default": "الافتراضي",
-                    
-                    
-                    
-
-
-
-
-
-
+                    "Default": "الافتراضي", "ABOUT REMIX": "عن ريمكس",
+                    "Your style, your choice, your Remix.": "ستايلك، اختيارك، ريمكس الخاص فيك.",
+                    "Who We Are": "من نحن",
+                    "REMIX is an e-commerce platform created to make shopping simple, convenient, and enjoyable. We bring together quality products, modern design, and a smooth shopping experience in one place.": "ريمكس هي منصة للتجارة الإلكترونية تهدف إلى جعل تجربة التسوق سهلة ومريحة وممتعة. نجمع بين المنتجات عالية الجودة والتصميم العصري وتجربة التسوق السلسة في مكان واحد.",
+                    "Our Mission": "مهمتنا",
+                    "Our mission is to provide customers with a reliable and enjoyable online shopping experience while offering products that combine quality, style, and value.": "مهمتنا هي توفير تجربة تسوق إلكترونية موثوقة وممتعة لعملائنا، مع تقديم منتجات تجمع بين الجودة والأناقة والقيمة.",
+                    "Why Choose REMIX?": "لماذا تختار ريمكس؟",
+                    "Quality": "الجودة",
+                    "Products selected with quality in mind.": "منتجات يتم اختيارها مع التركيز على الجودة.",
+                    "Easy Shopping": "تسوق سهل",
+                    "A simple and convenient shopping experience.": "تجربة تسوق بسيطة ومريحة.",
+                    "Customer First": "العميل أولاً",
+                    "Your satisfaction is always our priority.": "رضاك هو دائمًا أولويتنا.",
+                    "Ready to start shopping?": "جاهز تبدأ التسوق؟",
+                    "SHOP NOW": "تسوق الآن",
+                    "THE ARCHIVE": "المجموعة",
+                    "COLLECTION": "الأرشيفية",
+                    "A curated collection of timeless pieces. Modern design meets quality and style.": "مجموعة مختارة من القطع الخالدة، حيث يلتقي التصميم العصري بالجودة والأناقة.",
+                    "DISCOVER COLLECTION": "اكتشف المجموعة",
+                    "Welcome to Remix": "مرحبا في ريمكس",
                 }
-                
+
             }
 
         },
@@ -211,4 +242,4 @@ i18n
         }
     });
 
-    export default i18n;
+export default i18n;
