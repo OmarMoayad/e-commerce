@@ -13,6 +13,9 @@ import Profile from "./pages/Profile/Profile";
 import ProfileInfo from "./pages/Profile/ProfileInfo";
 import ProfileOrders from "./pages/Profile/ProfileOrders";
 import Shop from "./pages/Shop/Shop";
+import ForgotPassword from "./pages/ForgotPassword/ForgotPassword";
+import CodeVerification from "./pages/CodeVerification/CodeVerification";
+import NewPassword from "./pages/NewPassword/NewPassword";
 
 const router = createBrowserRouter([
     {
@@ -51,6 +54,21 @@ const router = createBrowserRouter([
                     <Checkout />
                 </ProtectedRouter>,
             },
+
+            {
+                path: "ForgotPassword",
+                element: <ForgotPassword />,
+            },
+
+            {
+                path: "/CodeVerification",
+                element: <CodeVerification />,
+            },
+            {
+                path: "/NewPassword",
+                element: <NewPassword />,
+            },
+
             {
                 path: "/profile",
                 element: <ProtectedRouter>
@@ -65,6 +83,7 @@ const router = createBrowserRouter([
                         path: "orders",
                         element: <ProfileOrders />,
                     }
+
                 ]
             }
         ],

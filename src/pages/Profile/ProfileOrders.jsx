@@ -1,12 +1,5 @@
 import React from "react";
-import {
-  Box,
-  Card,
-  CardContent,
-  Typography,
-  Divider,
-  Chip,
-} from "@mui/material";
+import {Box,Card,CardContent,Typography,Divider,Chip,} from "@mui/material";
 import useProfile from "../../hooks/useProfile";
 import { useTranslation } from "react-i18next";
 

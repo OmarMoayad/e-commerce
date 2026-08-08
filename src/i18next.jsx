@@ -65,6 +65,14 @@ i18n
                     "Hello": "Hello",
                     "Order #": "Order #",
                     "No orders found.": "No orders found.",
+                    "Email Address": "Email Address",
+                    "Password": "Password",
+                    "Forgot Password?": "Forgot Password?",
+                    "Create Account": "Create Account",
+                    "Welcome back": "Welcome back",
+                    "LOGIN": "LOGIN",
+                    "REMIX": "REMIX",
+                    "EMAIL ADDRESS": "EMAIL ADDRESS",
                     
                 }
             },
@@ -118,6 +126,20 @@ i18n
                     "Hello": "مرحبا",
                     "Order #": "رقم الطلب",
                     "No orders found.": "لا يوجد طلبات",
+                    "Email Address": "البريد الالكتروني",
+                    "Password": "كلمة المرور",
+                    "Forgot Password?": "هل نسيت كلمة المرور؟",
+                    "Create Account": "إنشاء حساب",
+                    "Welcome back": "مرحبا",
+                    "Email Address": "البريد الالكتروني",
+                    "PASSWORD": "كلمة المرور",
+                    "Forgot Password?": "هل نسيت كلمة المرور؟",
+                    "Create Account": "إنشاء حساب",
+                    "LOGIN": "تسجيل الدخول",
+                    "CREATE ACCOUNT": "إنشاء حساب",
+                    "REMIX": "ريـمـكس",
+                    "EMAIL ADDRESS": "البريد الالكتروني",
+                    
 
                     
                 }

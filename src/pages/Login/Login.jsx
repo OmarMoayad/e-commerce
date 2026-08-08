@@ -11,8 +11,13 @@ import { loginSchema } from '../../validations/LoginSchema';
 import { useState } from 'react';
 import useAuthStore from '../../auth/useAuthStore';
 import { useNavigate } from 'react-router-dom';
+import { Card,CardContent,Divider,Link,} from "@mui/material";
+import { Link as RouterLink } from "react-router-dom";
+import logo from "../../assets/logo.png";
+import { useTranslation } from "react-i18next";
 
 export default function Login() {
+  const { t } = useTranslation();
   const [serverErrors, setServerErrors] = useState({});
   const navigate = useNavigate();
 
@@ -28,25 +33,49 @@ export default function Login() {
       setServerErrors(err.response.data.errors);
     }
   };
+return (
+  <Box sx={{minHeight: "80vh",display: "flex",justifyContent: "center",alignItems: "center",p: 3}}>
+    <Card elevation={0} sx={{ width: 450,borderRadius: 4,border: "1px solid",borderColor: "divider",}}>
+      <CardContent sx={{ p: 5 }}>
+        <Box sx={{display: "flex",flexDirection: "column",alignItems: "center",mb: 4}}>
+          <Box component="img" src={logo} alt="Logo" sx={{width: 60,height: 60,mb: 2,}}/>
 
-  return (
-    <Box component="section" className="registerPage">
-      <Typography component="h1" variant="h1" sx={{ fontSize: "48px", fontWeight: "bold", margin: "20px", color: "#567effff" }} >
-        Login
-      </Typography>
+          <Typography variant="h4" fontWeight="bold">{t("REMIX")}</Typography>
 
-      <Box>
-        {serverErrors?.length > 0 ? serverErrors.map((error) => (
-          <Typography variant='p' color="error">{error}</Typography>
-        )) : ""}
-      </Box>
+          <Typography color="text.secondary" sx={{ mt: 1 }}>{t("Welcome back")}</Typography>
+        </Box>
 
-      <Box onSubmit={handleSubmit(LoginForm)} component="form" sx={{ marginTop: 2, display: 'flex', justifyContent: "center", alignItems: "center", flexDirection: 'column', gap: 2 }}>
-        <TextField  {...register('email')} sx={{ width: "20%" }} label="email" variant="outlined" error={errors.email} helperText={errors.email?.message} />
-        <TextField  {...register('password')} sx={{ width: "20%" }} label="password" variant="outlined" error={errors.password} helperText={errors.password?.message} />
-        <Button variant="contained" type="submit" disabled={isSubmitting}>{isSubmitting ? <CircularProgress /> : "Login"}</Button>
-      </Box>
+        {serverErrors?.length > 0 && serverErrors.map((error, index) => (<Typography key={index} color="error" sx={{ mb: 1 }}>{error}</Typography>))}
 
-    </Box>
-  );
+        <Box component="form" onSubmit={handleSubmit(LoginForm)}>
+          <Typography variant="caption" sx={{fontWeight: "bold",letterSpacing: 2,}}>{t("EMAIL ADDRESS")}</Typography>
+
+          <TextField fullWidth margin="normal" placeholder="name@example.com"{...register("email")}error={!!errors.email} helperText={errors.email?.message}/>
+
+          <Box sx={{display: "flex",justifyContent: "space-between",alignItems: "center",mt: 2,}}>
+            <Typography variant="caption" sx={{fontWeight: "bold",letterSpacing: 2,}}>{t("PASSWORD")}</Typography>
+
+            <Link component={RouterLink}to="/ForgotPassword" underline="hover" color="text.primary"fontSize={12}>{t("Forgot Password?")}</Link>
+          </Box>
+
+          <TextField fullWidth margin="normal" type="password"{...register("password")}error={!!errors.password}helperText={errors.password?.message}/>
+
+          <Button fullWidth type="submit" variant="contained"disabled={isSubmitting} sx={{color:"white", mt: 4,py: 1.5,bgcolor: "black", "&:hover": {bgcolor: "#222",},}}>
+            {isSubmitting ? (
+              <CircularProgress size={24} color="inherit"/>
+            ) : (
+              t("LOGIN")
+            )}
+          </Button>
+
+          <Button component={RouterLink}to="/register"fullWidth variant="outlined"sx={{mt: 2,py: 1.5,color: "text.primary",borderColor: "black","&:hover": {borderColor: "black",bgcolor: "#f5f5f5",}}}>
+            {t("CREATE ACCOUNT")}
+          </Button>
+        </Box>
+
+        <Divider sx={{ mt: 5 }} />
+      </CardContent>
+    </Card>
+  </Box>
+);
 }
