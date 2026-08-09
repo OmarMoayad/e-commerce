@@ -14,7 +14,9 @@ export default function useAddReview() {
             alert("Review added successfully");
         },
         onError: (error) => {
-            alert(error.response.data.message);
+            if(error.response.status === 401){
+                navigate("/login");
+            }
         }
     });
 };

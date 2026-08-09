@@ -41,9 +41,9 @@ export default function Links() {
 
 
     const handleLogout = () => {
-    logout();
-    navigate("/login");
-  };
+        logout();
+        navigate("/login");
+    };
 
     return (
         <>
@@ -82,4 +82,5 @@ export default function Links() {
                 </Link>
             )}
         </>
-    )};
+    )
+};
