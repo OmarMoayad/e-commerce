@@ -34,7 +34,7 @@ export default function Categories() {
 
             <Box sx={{ width: "100%", display: "grid", gridTemplateColumns: { xs: "100%", md: "50% 50%", }, gap: 2, boxSizing: "border-box", }}>
                 {categories.map((category) => (
-                    <Box key={category.id} sx={{height: 100,display: "flex",alignItems: "center",justifyContent: "flex-start",px: 3,boxSizing: "border-box",backgroundColor: "grey.100",border: "1px solid",borderColor: "divider",cursor: "pointer",transition: "all 0.3s ease", "&:hover": { backgroundColor: "black",color: "white", }, }}>
+                    <Box key={category.id} sx={{height: 100,display: "flex",alignItems: "center",justifyContent: "flex-start",px: 3,boxSizing: "border-box",border: "1px solid",borderColor: "divider",cursor: "pointer",transition: "all 0.3s ease","&:hover": {backgroundColor: "#333232ff",},}}>
                         <Typography sx={{fontSize: "1.1rem",fontWeight: 700,textTransform: "uppercase",letterSpacing: 1.5,}}>
                             {category.name}
                         </Typography>
