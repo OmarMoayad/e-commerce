@@ -9,7 +9,7 @@ const gettheme = () => {
         mode,
         text: {
             primary: mode === "light" ? "#000000" : "#ffffffff",
-            secondary: mode === "light" ? "#ffffffff" : "#666666",
+            secondary: mode === "light" ? "#666666" : "#ffffff",
         },
     },
     }
