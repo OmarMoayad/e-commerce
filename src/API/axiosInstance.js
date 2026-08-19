@@ -11,13 +11,17 @@ axiosInstance.interceptors.request.use((config) => {
     return config;
 })
 
+const token = useAuthStore.getState().token;
+
 const axiosInstanceWithToken = axios.create({
     baseURL: `${import.meta.env.VITE_BURL}`,
     headers: {
-        "Authorization": `Bearer ${useAuthStore.getState().token}`,
+        "Authorization": `Bearer ${token}`,
     },
 })
+
 axiosInstanceWithToken.interceptors.request.use((config) => {
+    
     config.headers["Accept-Language"] = i18n.language;
     return config;
 })

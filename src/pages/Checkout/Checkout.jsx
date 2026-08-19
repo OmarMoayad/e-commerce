@@ -21,11 +21,12 @@ export default function Checkout() {
             <Select value={paymentMethod}onChange={(e) => setPaymentMethod(e.target.value)}>
               <MenuItem value="Visa">{t("Visa")} </MenuItem>
 
-              <MenuItem value="CashOnDelivery"> {t("Cash on Delivery")} </MenuItem>
+              <MenuItem value="Cash"> {t("Cash on Delivery")} </MenuItem>
             </Select>
           </FormControl>
 
           <Button fullWidth variant="contained" sx={{mt: 5,py: 1.5,bgcolor: "text.primary","&:hover": {bgcolor: "#222"},}}onClick={() =>checkout({PaymentMethod: paymentMethod,})}> {t("Complete Order")} </Button>
+          
         </CardContent>
       </Card>
     </Box>

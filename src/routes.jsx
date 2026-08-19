@@ -16,6 +16,7 @@ import Shop from "./pages/Shop/Shop";
 import ForgotPassword from "./pages/ForgotPassword/ForgotPassword";
 import CodeVerification from "./pages/CodeVerification/CodeVerification";
 import NewPassword from "./pages/NewPassword/NewPassword";
+import PrivacyPolicy from "./pages/PrivacyPolicy/PrivacyPolicy";
 
 const router = createBrowserRouter([
     {
@@ -53,6 +54,10 @@ const router = createBrowserRouter([
                 element: <ProtectedRouter>
                     <Checkout />
                 </ProtectedRouter>,
+            },
+            {
+                path: "/privacypolicy",
+                element: <PrivacyPolicy />,
             },
 
             {

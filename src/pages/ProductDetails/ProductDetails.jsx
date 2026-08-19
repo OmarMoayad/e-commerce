@@ -51,7 +51,7 @@ export default function ProductDetails() {
                     <Typography variant="h4" sx={{ mb: 3, fontWeight: 600, }}>${data.response.price}</Typography>
                     <Typography color="text.secondary" sx={{ mb: 4, lineHeight: 1.8, }}> {data.response.description} </Typography>
 
-                    <Button variant="contained" size="large" fullWidth sx={{ py: 1.6, borderRadius: 1, bgcolor: "black", "&:hover": { bgcolor: "#222", },}} onClick={() => addToCart({productId: data.response.id, count: 1,})}>
+                    <Button variant="contained" size="large" fullWidth sx={{ color:"white", py: 1.6, borderRadius: 1, bgcolor: "black", "&:hover": { bgcolor: "#222", }, }} onClick={() => addToCart({ productId: data.response.id, count: 1, })}>
                         {t("Add to Cart")}
                     </Button>
                 </Grid>

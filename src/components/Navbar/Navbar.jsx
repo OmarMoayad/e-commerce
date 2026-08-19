@@ -14,6 +14,7 @@ import { useTranslation } from "react-i18next";
 import Links from "../Links/Links";
 import i18n from "../../i18next";
 
+
 export default function Navbar() {
 
   const mode = themeStore((state) => state.mode);
@@ -23,6 +24,14 @@ export default function Navbar() {
   const token = useAuthStore((state) => state.token);
   const theme = useTheme();
   const mobile = useMediaQuery(theme.breakpoints.down("md"));
+
+    const logout = useAuthStore((state) => state.logout);
+
+    const handleLogout = () => {
+        logout();
+        navigate("/login");
+    };
+
 
   const [open, setOpen] = useState(false);
 
@@ -35,13 +44,7 @@ export default function Navbar() {
     <>
       <AppBar position="sticky" elevation={0} color="inherit" sx={{ borderBottom: "1px solid", borderColor: "rgba(72, 72, 72, 0.10)", }} >
         <Container maxWidth="xl">
-          <Toolbar
-            disableGutters
-            sx={{
-              height: 80,
-              justifyContent: "space-between",
-            }}
-          >
+          <Toolbar disableGutters sx={{ height: 80, justifyContent: "space-between", }}>
 
             <Box component={RouterLink} to="/">
               <img src={logo} alt="Logo" style={{ height: 30 }} />
