@@ -55,6 +55,10 @@ export default function Links() {
                 {t("Shop")}
             </Link>
 
+            <Link component={RouterLink} to="/contact" underline="none" sx={navStyle}>
+                {t("Contact")}
+            </Link>
+
             {token && (
                 <Link component={RouterLink} to="/cart" underline="none" sx={navStyle}>
                     {t("Cart")}
@@ -67,12 +71,7 @@ export default function Links() {
                         {t("Login")}
                     </Link>
 
-                    <Link
-                        component={RouterLink}
-                        to="/register"
-                        underline="none"
-                        sx={navStyle}
-                    >
+                    <Link component={RouterLink} to="/register" underline="none" sx={navStyle} >
                         {t("Register")}
                     </Link>
                 </>

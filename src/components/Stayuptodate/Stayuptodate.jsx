@@ -22,8 +22,8 @@ export default function Stayuptodate() {
                     </Typography>
 
                     <Box component="form" sx={{ display: "flex", justifyContent: "center", gap: 1, maxWidth: 430, mx: "auto", }}>
-                        <TextField fullWidth placeholder="ENTER YOUR EMAIL" variant="standard" sx={{
-                            bgcolor: "#f5f5f5", "& .MuiInputBase-root": { px: 2, py: 1, fontSize: "0.75rem", }, "& .MuiInput-underline:before": { borderBottomColor: "#aaa", }, "& .MuiInput-underline:after": { borderBottomColor: "black", },
+                        <TextField fullWidth placeholder={t("ENTER YOUR EMAIL")} variant="standard" sx={{
+                            "& .MuiInputBase-root": { px: 2, py: 1, fontSize: "0.75rem", }, "& .MuiInput-underline:before": { borderBottomColor: "#aaa", }, "& .MuiInput-underline:after": { borderBottomColor: "black", },
                         }} />
 
                         <Button type="submit" variant="contained" sx={{

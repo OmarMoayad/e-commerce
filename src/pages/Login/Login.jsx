@@ -13,12 +13,17 @@ import useAuthStore from '../../auth/useAuthStore';
 import { useNavigate } from 'react-router-dom';
 import { Card, CardContent, Divider, Link, } from "@mui/material";
 import { Link as RouterLink } from "react-router-dom";
-import logo from "../../assets/logo.png";
+import logoLight from "../../assets/logo.png";
+import logoDark from "../../assets/logo-Darkmode.png";
 import { useTranslation } from "react-i18next";
+import CustomAlert from '../../components/Alert/Alert';
+import themeStore from '../../auth/useThemeStore';
 
 export default function Login() {
   const { t } = useTranslation();
-  const [serverErrors, setServerErrors] = useState({});
+  const mode = themeStore((state) => state.mode);
+  const [serverErrors, setServerErrors] = useState([]);
+  const [alertOpen, setAlertOpen] = useState(false);
   const navigate = useNavigate();
 
   const { register, handleSubmit, formState: { errors, isSubmitting } } = useForm({ resolver: yupResolver(loginSchema) });
@@ -30,7 +35,14 @@ export default function Login() {
       setToken(response.data.accessToken);
       navigate("/");
     } catch (err) {
-      setServerErrors(err.response.data.errors);
+      const rawErrors = err.response?.data?.errors;
+      const normalized = Array.isArray(rawErrors)
+        ? rawErrors
+        : rawErrors && typeof rawErrors === 'object'
+        ? Object.values(rawErrors).flat()
+        : [err.response?.data?.message || 'An error occurred'];
+      setServerErrors(normalized);
+      setAlertOpen(true);
     }
   };
   return (
@@ -38,14 +50,19 @@ export default function Login() {
       <Card elevation={0} sx={{ width: 450, borderRadius: 4, border: "1px solid", borderColor: "divider", }}>
         <CardContent sx={{ p: 5 }}>
           <Box sx={{ display: "flex", flexDirection: "column", alignItems: "center", mb: 4 }}>
-            <Box component="img" src={logo} alt="Logo" sx={{ width: 60, height: 60, mb: 2, }} />
+            <Box component="img" src={mode === "dark" ? logoDark : logoLight} alt="Logo" sx={{ width: 60, height: 60, mb: 2, }} />
 
             <Typography variant="h4" fontWeight="bold">{t("REMIX")}</Typography>
 
             <Typography color="text.secondary" sx={{ mt: 1 }}>{t("Welcome back")}</Typography>
           </Box>
 
-          {serverErrors?.length > 0 && serverErrors.map((error, index) => (<Typography key={index} color="error" sx={{ mb: 1 }}>{error}</Typography>))}
+          <CustomAlert
+            open={alertOpen}
+            setOpen={setAlertOpen}
+            message={serverErrors?.length > 0 ? serverErrors.join(' | ') : ''}
+            severity="error"
+          />
 
           <Box component="form" onSubmit={handleSubmit(LoginForm)}>
             <Typography variant="caption" sx={{ fontWeight: "bold", letterSpacing: 2, }}>{t("EMAIL ADDRESS")}</Typography>

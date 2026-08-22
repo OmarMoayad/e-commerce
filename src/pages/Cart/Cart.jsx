@@ -9,6 +9,7 @@ import useClearCart from '../../hooks/useClearCart';
 import { Link } from 'react-router-dom';
 import { Card, CardContent, Divider } from "@mui/material";
 import { useTranslation } from "react-i18next";
+import CustomAlert from '../../components/Alert/Alert';
 
 
 
@@ -20,7 +21,14 @@ export default function Cart() {
   const { mutate: clearCart, isPending: clearPending } = useClearCart();
 
   if (isLoading) return <CircularProgress />
-  if (isError) return <Typography color="error">{error.message}</Typography>
+  if (isError) return (
+    <CustomAlert
+      open={isError}
+      setOpen={() => {}}
+      message={error.message}
+      severity="error"
+    />
+  );
   if (data.items.length === 0)
     return (
       <Box sx={{ textAlign: "center", mt: 10 }}>

@@ -1,18 +1,21 @@
 import React from "react";
 import { Box, Typography } from "@mui/material";
 import { useTranslation } from "react-i18next";
-import logo from "../../assets/logo.png";
+import logoLight from "../../assets/logo.png";
+import logoDark from "../../assets/logo-Darkmode.png";
+import themeStore from "../../auth/useThemeStore";
 
 export default function Footer() {
   const { t } = useTranslation();
+  const mode = themeStore((state) => state.mode);
 
   return (
     <Box component="footer" sx={{ mt: 8, py: 4, borderTop: "1px solid", borderColor: "divider", display: "flex", flexDirection: "column", alignItems: "center", gap: 2, }}>
-      <Box component="img" src={logo} alt="Logo" sx={{ height: 45, width: "auto", }} />
+      <Box component="img" src={mode === "dark" ? logoDark : logoLight} alt="Logo" sx={{ height: 45, width: "auto", }} />
 
       <Typography variant="body2" sx={{ color: "text.primary", textAlign: "center" }}>
         © {new Date().getFullYear()} {t("Remix Store")} | {t("All rights reserved.")}
       </Typography>
     </Box>
   );
-}
+}

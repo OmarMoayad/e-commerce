@@ -9,17 +9,20 @@ import {
 } from "@mui/material";
 import { Link as RouterLink } from "react-router-dom";
 import { useTranslation } from "react-i18next";
-import logo from "../../assets/logo.png";
+import logoLight from "../../assets/logo.png";
+import logoDark from "../../assets/logo-Darkmode.png";
+import themeStore from "../../auth/useThemeStore";
 
 export default function AboutUs() {
     const { t } = useTranslation();
+    const mode = themeStore((state) => state.mode);
 
     return (
         <Box sx={{minHeight: "80vh", display: "flex", justifyContent: "center", alignItems: "center", p: 3,}}>
             <Card elevation={0}sx={{width: "100%",maxWidth: 800,borderRadius: 4,border: "1px solid",borderColor: "divider",}}>
                 <CardContent sx={{ p: { xs: 3, md: 6 } }}>
                     <Box sx={{display: "flex", flexDirection: "column", alignItems: "center",textAlign: "center",mb: 5,}}>
-                        <Box component="img"src={logo}alt="Remix Logo"sx={{width: 70,height: 70,mb: 2,}}/>
+                        <Box component="img" src={mode === "dark" ? logoDark : logoLight} alt="Remix Logo" sx={{width: 70, height: 70, mb: 2,}}/>
 
                         <Typography variant="h3" fontWeight="bold">{t("ABOUT REMIX")}</Typography>
 

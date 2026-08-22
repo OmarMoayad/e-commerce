@@ -9,6 +9,7 @@ import { useState } from "react";
 import { Dialog, DialogTitle, DialogContent, DialogActions, TextField, Rating } from "@mui/material";
 import useAddReview from '../../hooks/useAddReview'
 import { useTranslation } from "react-i18next";
+import CustomAlert from '../../components/Alert/Alert';
 
 
 export default function ProductDetails() {
@@ -21,6 +22,7 @@ export default function ProductDetails() {
     const [open, setOpen] = useState(false);
     const [rating, setRating] = useState(0);
     const [comment, setComment] = useState("");
+    const [alertState, setAlertState] = useState({ open: false, message: "", severity: "success" });
 
     const handleOpen = () => setOpen(true);
 
@@ -30,14 +32,47 @@ export default function ProductDetails() {
         setComment("");
     };
 
+    const handleReviewSubmit = () => {
+        addReview(
+            { productId: data.response.id, rating, comment },
+            {
+                onSuccess: () => {
+                    setAlertState({ open: true, message: t("Review added successfully"), severity: "success" });
+                    handleClose();
+                },
+                onError: (err) => {
+                    setAlertState({
+                        open: true,
+                        message: err.response?.data?.message || t("Failed to add review"),
+                        severity: "error",
+                    });
+                    handleClose();
+                },
+            }
+        );
+    };
+
     if (isLoading) {
         return <CircularProgress />
     }
     if (isError) {
-        return <Typography color="error">Error: {error.message}</Typography>
+        return (
+            <CustomAlert
+                open={isError}
+                setOpen={() => {}}
+                message={`Error: ${error.message}`}
+                severity="error"
+            />
+        );
     }
     return (
         <>
+            <CustomAlert
+                open={alertState.open}
+                setOpen={(val) => setAlertState((prev) => ({ ...prev, open: val }))}
+                message={alertState.message}
+                severity={alertState.severity}
+            />
             <Grid container spacing={6} sx={{ maxWidth: 1400, mx: "auto", py: 6, px: 3, alignItems: "flex-start", }}>
                 <Grid size={{ xs: 12, md: 6 }}>
                     <Card elevation={0} sx={{ borderRadius: 4, display: "flex", justifyContent: "center", p: 4, }}>
@@ -110,10 +145,7 @@ export default function ProductDetails() {
                 </DialogContent>
                 <DialogActions sx={{ p: 2 }}>
                     <Button sx={{ px: 4, py: 1, color: "text.primary", borderColor: "black", "&:hover": { borderColor: "black", bgcolor: "#f5f5f5", } }} variant="outlined" onClick={handleClose}>{t("Cancel")}</Button>
-                    <Button sx={{ px: 4, py: 1, color: "text.primary", borderColor: "black", "&:hover": { borderColor: "black", bgcolor: "#f5f5f5", } }} variant="outlined" onClick={() => {
-                            addReview({ productId: data.response.id, rating, comment });
-                            handleClose();
-                        }}>
+                    <Button sx={{ px: 4, py: 1, color: "text.primary", borderColor: "black", "&:hover": { borderColor: "black", bgcolor: "#f5f5f5", } }} variant="outlined" onClick={handleReviewSubmit}>
                         {t("Submit Review")}
                     </Button>
                 </DialogActions>

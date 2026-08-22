@@ -17,6 +17,7 @@ import ForgotPassword from "./pages/ForgotPassword/ForgotPassword";
 import CodeVerification from "./pages/CodeVerification/CodeVerification";
 import NewPassword from "./pages/NewPassword/NewPassword";
 import PrivacyPolicy from "./pages/PrivacyPolicy/PrivacyPolicy";
+import Contactus from "./pages/Contactus/Contactus";
 
 const router = createBrowserRouter([
     {
@@ -30,6 +31,10 @@ const router = createBrowserRouter([
             {
                 path: "/login",
                 element: <Login />,
+            },
+            {
+                path: "/contact",
+                element: <Contactus />,
             },
             {
                 path: "/register",

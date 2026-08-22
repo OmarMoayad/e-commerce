@@ -13,11 +13,14 @@ import useAuthStore from '../../auth/useAuthStore';
 import { useNavigate } from 'react-router-dom';
 import { Card, CardContent, Divider, Link, } from "@mui/material";
 import { Link as RouterLink } from "react-router-dom";
-import logo from "../../assets/logo.png";
+import logoLight from "../../assets/logo.png";
+import logoDark from "../../assets/logo-Darkmode.png";
 import { useTranslation } from "react-i18next";
+import themeStore from '../../auth/useThemeStore';
 
 export default function CodeVerification() {
   const { t } = useTranslation();
+  const mode = themeStore((state) => state.mode);
   const navigate = useNavigate();
 
   const { register, handleSubmit, formState: { errors, isSubmitting } } = useForm();
@@ -31,7 +34,7 @@ export default function CodeVerification() {
       <Card elevation={0} sx={{ width: 450, borderRadius: 4, border: "1px solid", borderColor: "divider", }}>
         <CardContent sx={{ p: 5 }}>
           <Box sx={{ display: "flex", flexDirection: "column", alignItems: "center", mb: 4 }}>
-            <Box component="img" src={logo} alt="Logo" sx={{ width: 60, height: 60, mb: 2, }} />
+            <Box component="img" src={mode === "dark" ? logoDark : logoLight} alt="Logo" sx={{ width: 60, height: 60, mb: 2, }} />
             <Typography color="text.secondary" sx={{ mt: 1, fontWeight: "bold", fontSize: 15 }}>{t("code verification")}</Typography>
           </Box>
 

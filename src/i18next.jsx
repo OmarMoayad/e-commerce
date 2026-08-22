@@ -153,7 +153,9 @@ i18n
                     "A Circular Future": "A Circular Future",
                     "Longevity is the ultimate sustainable act. We design for permanence, not seasons. When your REMIX piece requires care, our Repair initiative ensures it is meticulously restored, extending its life indefinitely. When its journey finally ends, our take-back program guarantees responsible recycling.": "Longevity is the ultimate sustainable act. We design for permanence, not seasons. When your REMIX piece requires care, our Repair initiative ensures it is meticulously restored, extending its life indefinitely. When its journey finally ends, our take-back program guarantees responsible recycling.",
                     "Initiate Repair": "Initiate Repair",
-
+                    "Categories":"Categories",
+                    "ENTER YOUR EMAIL":"ENTER YOUR EMAIL",
+                    
                 }
             },
             ar: {
@@ -266,7 +268,7 @@ i18n
                     "DROPS AND EVENTS.": "العروض والأحداث الحصرية",
                     "SUBSCRIBE": "اشترك",
                     "By subscribing, you agree to our": "بالاشتراك، فإنك توافق على",
-                    "Privacy Policy.": "سياسة الخصوصية",
+                    " Privacy Policy.":  "     سياسة الخصوصية      ",
                     "Privacy Policy": "سياسة الخصوصية",
                     "LAST UPDATED: OCTOBER 20, 2024": "آخر تحديث: 20 أكتوبر 2024",
                     "Introduction": "مقدمة",
@@ -291,7 +293,10 @@ i18n
                     "THE LIFECYCLE": "دورة الحياة",
                     "A Circular Future": "مستقبل دائري",
                     "Longevity is the ultimate sustainable act. We design for permanence, not seasons. When your REMIX piece requires care, our Repair initiative ensures it is meticulously restored, extending its life indefinitely. When its journey finally ends, our take-back program guarantees responsible recycling.": "إن إطالة عمر المنتج هي جوهر الاستدامة. نحن نصمم منتجات تدوم طويلاً، وليس لمواسم مؤقتة. عندما تحتاج قطعة REMIX الخاصة بك إلى العناية، تضمن مبادرة الإصلاح لدينا ترميمها بعناية وإطالة عمرها إلى أقصى حد ممكن. وعندما تنتهي رحلتها أخيرًا، يضمن برنامج الاسترجاع لدينا إعادة تدويرها بطريقة مسؤولة.",
-                    "Initiate Repair": "طلب إصلاح"
+                    "Initiate Repair": "طلب إصلاح",
+                    "Categories":"التصنيفات",
+                    "ENTER YOUR EMAIL":"ادخل بريدك الالكتروني",
+                    
                     }
                 
 

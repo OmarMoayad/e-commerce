@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import TextField from '@mui/material/TextField';
@@ -8,19 +8,23 @@ import CircularProgress from '@mui/material/CircularProgress';
 import axiosInstance from '../../API/axiosInstance';
 import { yupResolver } from "@hookform/resolvers/yup"
 import { resetPasswordSchema } from '../../validations/ResetPasswordSchema';
-import { useState } from 'react';
 import useAuthStore from '../../auth/useAuthStore';
 import { useNavigate } from 'react-router-dom';
 import { Card, CardContent, Divider, Link, } from "@mui/material";
 import { Link as RouterLink } from "react-router-dom";
-import logo from "../../assets/logo.png";
+import logoLight from "../../assets/logo.png";
+import logoDark from "../../assets/logo-Darkmode.png";
 import { useTranslation } from "react-i18next";
 import useResetPassword from '../../hooks/useResetPassword';
+import CustomAlert from '../../components/Alert/Alert';
+import themeStore from '../../auth/useThemeStore';
 
 export default function NewPassword() {
     const { t } = useTranslation();
+    const mode = themeStore((state) => state.mode);
     const navigate = useNavigate();
     const { mutate: resetPassword } = useResetPassword();
+    const [alertState, setAlertState] = useState({ open: false, message: "", severity: "success" });
 
     const { register, handleSubmit, formState: { errors, isSubmitting } } = useForm({ resolver: yupResolver(resetPasswordSchema) });
 
@@ -33,17 +37,42 @@ export default function NewPassword() {
             email
         };
 
-        resetPassword(resetPasswordData);
+        resetPassword(resetPasswordData, {
+            onSuccess: () => {
+                setAlertState({
+                    open: true,
+                    message: t("Password reset successfully"),
+                    severity: "success"
+                });
+                setTimeout(() => {
+                    navigate("/login");
+                }, 1500);
+            },
+            onError: (error) => {
+                setAlertState({
+                    open: true,
+                    message: error.response?.data?.message || t("Failed to reset password"),
+                    severity: "error"
+                });
+            }
+        });
     };
     return (
         <Box sx={{ minHeight: "80vh", display: "flex", justifyContent: "center", alignItems: "center", p: 3 }}>
             <Card elevation={0} sx={{ width: 450, borderRadius: 4, border: "1px solid", borderColor: "divider", }}>
                 <CardContent sx={{ p: 5 }}>
                     <Box sx={{ display: "flex", flexDirection: "column", alignItems: "center", mb: 4 }}>
-                        <Box component="img" src={logo} alt="Logo" sx={{ width: 60, height: 60, mb: 2, }} />
+                        <Box component="img" src={mode === "dark" ? logoDark : logoLight} alt="Logo" sx={{ width: 60, height: 60, mb: 2, }} />
 
                         <Typography color="text.secondary" sx={{ mt: 1 }}>{t("Reset Password")}</Typography>
                     </Box>
+
+                    <CustomAlert
+                        open={alertState.open}
+                        setOpen={(val) => setAlertState((prev) => ({ ...prev, open: val }))}
+                        message={alertState.message}
+                        severity={alertState.severity}
+                    />
 
 
                     <Box component="form" onSubmit={handleSubmit(onNewPasswordSubmit)} >

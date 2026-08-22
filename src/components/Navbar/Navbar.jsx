@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { AppBar,Toolbar, Container, Box, Link, IconButton, Button, Drawer, List, ListItemButton, ListItemText, useMediaQuery,} from "@mui/material";
+import { AppBar,Toolbar, Container, Box, Link, IconButton, Button, Drawer, List, ListItemButton, ListItemText, useMediaQuery, Badge,} from "@mui/material";
 import { useTheme } from "@mui/material/styles";
 import MenuIcon from "@mui/icons-material/Menu";
 import ShoppingBagOutlinedIcon from "@mui/icons-material/ShoppingBagOutlined";
@@ -7,13 +7,39 @@ import PersonOutlineOutlinedIcon from "@mui/icons-material/PersonOutlineOutlined
 import DarkModeOutlinedIcon from "@mui/icons-material/DarkModeOutlined";
 import LightModeOutlinedIcon from "@mui/icons-material/LightModeOutlined";
 import { Link as RouterLink, useNavigate } from "react-router-dom";
-import logo from "../../assets/logo.png";
+import logoLight from "../../assets/logo.png";
+import logoDark from "../../assets/logo-Darkmode.png";
 import useAuthStore from "../../auth/useAuthStore";
 import themeStore from "../../auth/useThemeStore";
 import { useTranslation } from "react-i18next";
 import Links from "../Links/Links";
 import i18n from "../../i18next";
+import useCart from "../../hooks/useCart";
 
+
+
+function CartBadge() {
+  const { data } = useCart();
+  const itemCount = data?.items?.length ?? 0;
+  return (
+    <IconButton component={RouterLink} to="/cart">
+      <Badge
+        badgeContent={itemCount}
+        color="error"
+        sx={{
+          "& .MuiBadge-badge": {
+            fontSize: "0.65rem",
+            minWidth: 16,
+            height: 16,
+            padding: "0 4px",
+          },
+        }}
+      >
+        <ShoppingBagOutlinedIcon />
+      </Badge>
+    </IconButton>
+  );
+}
 
 export default function Navbar() {
 
@@ -47,7 +73,7 @@ export default function Navbar() {
           <Toolbar disableGutters sx={{ height: 80, justifyContent: "space-between", }}>
 
             <Box component={RouterLink} to="/">
-              <img src={logo} alt="Logo" style={{ height: 30 }} />
+              <img src={mode === "dark" ? logoDark : logoLight} alt="Logo" style={{ height: 30 }} />
             </Box>
             {!mobile && (
               <Box sx={{ display: "flex", alignItems: "center", gap: 5 }}>
@@ -59,6 +85,9 @@ export default function Navbar() {
               <IconButton component={RouterLink} to="/profile">
                 <PersonOutlineOutlinedIcon />
               </IconButton>
+              {token && (
+                <CartBadge />
+              )}
               <Button onClick={toggleLanguage} sx={{ minWidth: 40, color: "text.primary", }}> {i18n.language === "en" ? "AR" : "EN"} </Button>
 
               <IconButton onClick={toggleTheme}>{mode === "light" ? <DarkModeOutlinedIcon /> : <LightModeOutlinedIcon />}</IconButton>
@@ -81,6 +110,10 @@ export default function Navbar() {
 
           <ListItemButton component={RouterLink} to="/products" onClick={() => setOpen(false)}>
             <ListItemText primary={t("Shop")} />
+          </ListItemButton>
+
+          <ListItemButton component={RouterLink} to="/contact" onClick={() => setOpen(false)}>
+            <ListItemText primary={t("Contact")} />
           </ListItemButton>
 
           {token && (
