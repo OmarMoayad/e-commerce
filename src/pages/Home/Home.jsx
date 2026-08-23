@@ -7,6 +7,7 @@ import Lifecycle from '../../components/Thelifecycle/Thelifecycle'
 import CategoryShowcase from '../../components/Showcase/ShowCase'
 import Brands from '../../components/Brands/Brands'
 import Reviews from '../../components/Reviews/Reviews'
+import Sustainable from '../../components/Sustainable/Sustainable'
 
 export default function Home() {
   return (
@@ -15,6 +16,7 @@ export default function Home() {
       <Brands />
       <Categories />
       <CategoryShowcase />
+      <Sustainable />
       <Lifecycle />
       <AboutUs />
       <Reviews />
