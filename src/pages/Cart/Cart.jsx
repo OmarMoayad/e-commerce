@@ -12,7 +12,6 @@ import { useTranslation } from "react-i18next";
 import CustomAlert from '../../components/Alert/Alert';
 
 
-
 export default function Cart() {
   const { t } = useTranslation();
   const { data, isLoading, isError, error } = useCart();
@@ -72,7 +71,7 @@ export default function Cart() {
                   </Box>
 
                   <Box sx={{ display: "flex", alignItems: "center", gap: 1, }}>
-                    <Button variant="outlined" sx={{ color: "text.primary", borderColor: "black", "&:hover": { bgcolor: "#222" }, }} onClick={() => updateCart({ cartItemId: item.productId, quantity: item.count - 1, })}>
+                    <Button variant="outlined" sx={{ color: "text.primary", borderColor: "black", "&:hover": { bgcolor: "#222", color: "white" }, }} onClick={() => updateCart({ cartItemId: item.productId, quantity: item.count - 1, })}>
                       −
                     </Button>
 
@@ -80,7 +79,7 @@ export default function Cart() {
                       {item.count}
                     </Typography>
 
-                    <Button variant="outlined" sx={{ color: "text.primary", borderColor: "black", "&:hover": { bgcolor: "#222" }, }}  onClick={() => updateCart({ cartItemId: item.productId, quantity: item.count + 1, })}>
+                    <Button variant="outlined" sx={{ color: "text.primary", borderColor: "black", "&:hover": { bgcolor: "#222", color: "white" }, }}  onClick={() => updateCart({ cartItemId: item.productId, quantity: item.count + 1, })}>
                       +
                     </Button>
 

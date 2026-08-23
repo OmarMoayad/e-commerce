@@ -153,9 +153,32 @@ i18n
                     "A Circular Future": "A Circular Future",
                     "Longevity is the ultimate sustainable act. We design for permanence, not seasons. When your REMIX piece requires care, our Repair initiative ensures it is meticulously restored, extending its life indefinitely. When its journey finally ends, our take-back program guarantees responsible recycling.": "Longevity is the ultimate sustainable act. We design for permanence, not seasons. When your REMIX piece requires care, our Repair initiative ensures it is meticulously restored, extending its life indefinitely. When its journey finally ends, our take-back program guarantees responsible recycling.",
                     "Initiate Repair": "Initiate Repair",
-                    "Categories":"Categories",
-                    "ENTER YOUR EMAIL":"ENTER YOUR EMAIL",
-                    
+                    "Categories": "Categories",
+                    "ENTER YOUR EMAIL": "ENTER YOUR EMAIL",
+                    "Privacy Policy": "Privacy Policy",
+                    "REMIX operates within a highly vetted network of artisans, logistics partners, and security infrastructure providers. We transmit necessary data exclusively to those entities under strict confidentiality agreements. We categorically refuse to sell your information to external marketing conglomerates.": "تعمل REMIX ضمن شبكة مختارة بعناية من الحرفيين وشركاء الخدمات اللوجستية ومزودي البنية التحتية الأمنية. ولا نشارك البيانات الضرورية إلا مع الجهات التي تلتزم باتفاقيات صارمة للسرية. كما نرفض بشكل قاطع بيع معلوماتك إلى شركات التسويق الخارجية.",
+                    "For inquiries regarding bespoke pieces, collections, or private consultations, please reach out. Our concierge team is dedicated to providing an unparalleled luxury experience.": "For inquiries regarding bespoke pieces, collections, or private consultations, please reach out. Our concierge team is dedicated to providing an unparalleled luxury experience.",
+                    "Name": "Name",
+                    "Email Address": "Email Address",
+                    "Inquiry Type": "Inquiry Type",
+                    "Bespoke Design": "Bespoke Design",
+                    "Collections": "Collections",
+                    "Private Consultation": "Private Consultation",
+                    "Other": "Other",
+                    "Message": "Message",
+                    "Location": "Location",
+                    "SEND MESSAGE": "SEND MESSAGE",
+                    "Nablus mall, 3rd floor": "Nablus mall, 3rd floor",
+                    "Nablus, Palestine": "Nablus, Palestine",
+                    "Concierge Services": "Concierge Services",
+                    "Available Monday to Friday, 9:00 AM to 6:00 PM CET for priority assistance and styling advice.": "Available Monday to Friday, 9:00 AM to 6:00 PM CET for priority assistance and styling advice.",
+                    "Flagship Boutique": "Flagship Boutique",
+                    "MAP": "MAP",
+                    "Menswear": "Menswear",
+                    "Womenswear": "Womenswear",
+                    "Accessories": "Accessories",
+                    "Shop Now": "Shop Now",
+                    "Explore More": "Explore More"
                 }
             },
             ar: {
@@ -268,7 +291,7 @@ i18n
                     "DROPS AND EVENTS.": "العروض والأحداث الحصرية",
                     "SUBSCRIBE": "اشترك",
                     "By subscribing, you agree to our": "بالاشتراك، فإنك توافق على",
-                    " Privacy Policy.":  "     سياسة الخصوصية      ",
+                    " Privacy Policy.": "     سياسة الخصوصية      ",
                     "Privacy Policy": "سياسة الخصوصية",
                     "LAST UPDATED: OCTOBER 20, 2024": "آخر تحديث: 20 أكتوبر 2024",
                     "Introduction": "مقدمة",
@@ -294,11 +317,33 @@ i18n
                     "A Circular Future": "مستقبل دائري",
                     "Longevity is the ultimate sustainable act. We design for permanence, not seasons. When your REMIX piece requires care, our Repair initiative ensures it is meticulously restored, extending its life indefinitely. When its journey finally ends, our take-back program guarantees responsible recycling.": "إن إطالة عمر المنتج هي جوهر الاستدامة. نحن نصمم منتجات تدوم طويلاً، وليس لمواسم مؤقتة. عندما تحتاج قطعة REMIX الخاصة بك إلى العناية، تضمن مبادرة الإصلاح لدينا ترميمها بعناية وإطالة عمرها إلى أقصى حد ممكن. وعندما تنتهي رحلتها أخيرًا، يضمن برنامج الاسترجاع لدينا إعادة تدويرها بطريقة مسؤولة.",
                     "Initiate Repair": "طلب إصلاح",
-                    "Categories":"التصنيفات",
-                    "ENTER YOUR EMAIL":"ادخل بريدك الالكتروني",
-                    
-                    }
-                
+                    "Categories": "التصنيفات",
+                    "ENTER YOUR EMAIL": "ادخل بريدك الالكتروني",
+                    "Contact Us": "تواصل معنا",
+                    "For inquiries regarding bespoke pieces, collections, or private consultations, please reach out. Our concierge team is dedicated to providing an unparalleled luxury experience.": "للاستفسارات المتعلقة بالقطع المصممة خصيصًا، أو المجموعات، أو الاستشارات الخاصة، لا تتردد في التواصل معنا. فريقنا المتخصص ملتزم بتقديم تجربة فاخرة لا مثيل لها.",
+                    "Name": "الاسم",
+                    "Email Address": "البريد الإلكتروني",
+                    "Inquiry Type": "نوع الاستفسار",
+                    "Bespoke Design": "تصميم مخصص",
+                    "Collections": "المجموعات",
+                    "Private Consultation": "استشارة خاصة",
+                    "Other": "أخرى",
+                    "Message": "الرسالة",
+                    "Location": "الموقع",
+                    "SEND MESSAGE": "إرسال الرسالة",
+                    "Nablus mall, 3rd floor": "مول نابلس، الطابق الثالث",
+                    "Nablus, Palestine": "نابلس، فلسطين",
+                    "Concierge Services": "خدمات الكونسيرج",
+                    "Available Monday to Friday, 9:00 AM to 6:00 PM CET for priority assistance and styling advice.": "متاح من الإثنين إلى الجمعة، من الساعة 9:00 صباحًا حتى 6:00 مساءً بتوقيت وسط أوروبا، لتقديم المساعدة والأفكار المتعلقة بالتنسيق.",
+                    "Flagship Boutique": "المتجر الرئيسي",
+                    "MAP": "الخريطة",
+                    "Menswear": "ملابس رجالية",
+                    "Womenswear": "ملابس نسائية",
+                    "Accessories": "إكسسوارات",
+                    "Shop Now": "تسوق الآن",
+                    "Explore More": "اكتشف المزيد"
+                }
+
 
             }
 
