@@ -191,6 +191,18 @@ i18n
                     "From browsing to checkout, everything feels smooth and thoughtfully designed. The website makes shopping simple and enjoyable.": "From browsing to checkout, everything feels smooth and thoughtfully designed. The website makes shopping simple and enjoyable.",
                     "The website is clean, easy to navigate, and the product presentation is excellent. Everything feels premium and effortless.": "The website is clean, easy to navigate, and the product presentation is excellent. Everything feels premium and effortless.",
                     "Finding products, checking details, and placing an order was incredibly easy. A great shopping experience from start to finish.": "Finding products, checking details, and placing an order was incredibly easy. A great shopping experience from start to finish.",
+                    "Sustainable Sourcing": "Sustainable Sourcing",
+                    "We curate materials not just for their tactile excellence, but for their ecological footprint. Our palette is defined by nature, engineered for durability.": "We curate materials not just for their tactile excellence, but for their ecological footprint. Our palette is defined by nature, engineered for durability.",
+                    "Organic Fibers": "Organic Fibers",
+                    "Cultivated without synthetic pesticides, requiring significantly less water than conventional alternatives.": "Cultivated without synthetic pesticides, requiring significantly less water than conventional alternatives.",
+                    "Regenerated Nylon": "Regenerated Nylon",
+                    "Recovered ocean plastics and textile waste, transformed into high-performance, infinitely recyclable yarns.": "Recovered ocean plastics and textile waste, transformed into high-performance, infinitely recyclable yarns.",
+                    "Conscious Leather": "Conscious Leather",
+                    "Sourced exclusively as a byproduct, tanned using natural vegetable processes free from harmful heavy metals.": "Sourced exclusively as a byproduct, tanned using natural vegetable processes free from harmful heavy metals.",
+                    "LOST IN THE ARCHIVE": "LOST IN THE ARCHIVE",
+                    "The page you are looking for does not exist or has been moved to our archive. Explore our latest collections or return to the beginning.": "The page you are looking for does not exist or has been moved to our archive. Explore our latest collections or return to the beginning.",
+                    "RETURN HOME": "RETURN HOME",
+                    "SHOP NEW ARRIVALS": "SHOP NEW ARRIVALS",
                 }
             },
             ar: {
@@ -366,12 +378,20 @@ i18n
                     "From browsing to checkout, everything feels smooth and thoughtfully designed. The website makes shopping simple and enjoyable.": "من تصفح المنتجات وحتى إتمام الطلب، كل شيء سلس ومصمم بعناية. الموقع يجعل تجربة التسوق بسيطة وممتعة.",
                     "The website is clean, easy to navigate, and the product presentation is excellent. Everything feels premium and effortless.": "الموقع أنيق وسهل الاستخدام، وطريقة عرض المنتجات ممتازة. كل شيء يعطي إحساسًا بالفخامة والبساطة.",
                     "Finding products, checking details, and placing an order was incredibly easy. A great shopping experience from start to finish.": "العثور على المنتجات، ومراجعة تفاصيلها، وإتمام الطلب كان سهلًا جدًا. تجربة تسوق رائعة من البداية إلى النهاية.",
-
+                    "Sustainable Sourcing": "مصادر مستدامة",
+                    "We curate materials not just for their tactile excellence, but for their ecological footprint. Our palette is defined by nature, engineered for durability.": "نختار موادنا ليس فقط لجودتها وملمسها المميز، بل أيضًا لأثرها البيئي. وتستوحي مجموعتنا خاماتها من الطبيعة، مع تصميمها لتدوم طويلًا.",
+                    "Organic Fibers": "ألياف عضوية",
+                    "Cultivated without synthetic pesticides, requiring significantly less water than conventional alternatives.": "تُزرع دون استخدام المبيدات الاصطناعية، وتحتاج إلى كمية مياه أقل بكثير مقارنة بالبدائل التقليدية.",
+                    "Regenerated Nylon": "نايلون مُعاد تدويره",
+                    "Recovered ocean plastics and textile waste, transformed into high-performance, infinitely recyclable yarns.": "يُصنع من البلاستيك المستخرج من المحيطات ومخلفات المنسوجات، ويُحوّل إلى خيوط عالية الأداء وقابلة لإعادة التدوير بشكل مستمر.",
+                    "Conscious Leather": "جلد مستدام",
+                    "Sourced exclusively as a byproduct, tanned using natural vegetable processes free from harmful heavy metals.": "يُحصل عليه حصريًا كمنتج ثانوي، ويُدبغ باستخدام عمليات نباتية طبيعية خالية من المعادن الثقيلة الضارة.",
+                    "LOST IN THE ARCHIVE": "ضائع في الأرشيف",
+                    "The page you are looking for does not exist or has been moved to our archive. Explore our latest collections or return to the beginning.": "الصفحة التي تبحث عنها غير موجودة أو تم نقلها إلى أرشيفنا. استكشف أحدث مجموعاتنا أو عد إلى البداية.",
+                    "RETURN HOME": "العودة للرئيسية",
+                    "SHOP NEW ARRIVALS": "تسوق أحدث المنتجات",
                 }
-
-
             }
-
         },
         lng: "", // if you're using a language detector, do not define the lng option
         fallbackLng: "en",

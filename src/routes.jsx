@@ -18,6 +18,7 @@ import CodeVerification from "./pages/CodeVerification/CodeVerification";
 import NewPassword from "./pages/NewPassword/NewPassword";
 import PrivacyPolicy from "./pages/PrivacyPolicy/PrivacyPolicy";
 import Contactus from "./pages/Contactus/Contactus";
+import NotFound from "./pages/404/404";
 
 const router = createBrowserRouter([
     {
@@ -95,6 +96,10 @@ const router = createBrowserRouter([
                     }
 
                 ]
+            },
+            {
+                path: "*",
+                element: <NotFound />,
             }
         ],
     },
