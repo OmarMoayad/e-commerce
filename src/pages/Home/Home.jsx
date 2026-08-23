@@ -5,11 +5,13 @@ import Hero from '../../components/Hero/Hero'
 import Stayuptodate from '../../components/Stayuptodate/Stayuptodate'
 import Lifecycle from '../../components/Thelifecycle/Thelifecycle'
 import CategoryShowcase from '../../components/Showcase/ShowCase'
+import Brands from '../../components/Brands/Brands'
 
 export default function Home() {
   return (
     <>
       <Hero />
+      <Brands />
       <Categories />
       <CategoryShowcase />
       <Lifecycle />
