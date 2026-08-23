@@ -178,7 +178,19 @@ i18n
                     "Womenswear": "Womenswear",
                     "Accessories": "Accessories",
                     "Shop Now": "Shop Now",
-                    "Explore More": "Explore More"
+                    "Explore More": "Explore More",
+                    "Client Reviews": "Client Reviews",
+                    "4.8 / 5.0 based on 124 reviews": "4.8 / 5.0 based on 124 reviews",
+                    "Elias V.": "Elias V.",
+                    "Marcus L.": "Marcus L.",
+                    "Sarah K.": "Sarah K.",
+                    "Verified Buyer": "Verified Buyer",
+                    "\"Exceptional Experience.\"": "\"Exceptional Experience.\"",
+                    "\"Beautifully Designed.\"": "\"Beautifully Designed.\"",
+                    "\"Simple & Reliable.\"": "\"Simple & Reliable.\"",
+                    "From browsing to checkout, everything feels smooth and thoughtfully designed. The website makes shopping simple and enjoyable.": "From browsing to checkout, everything feels smooth and thoughtfully designed. The website makes shopping simple and enjoyable.",
+                    "The website is clean, easy to navigate, and the product presentation is excellent. Everything feels premium and effortless.": "The website is clean, easy to navigate, and the product presentation is excellent. Everything feels premium and effortless.",
+                    "Finding products, checking details, and placing an order was incredibly easy. A great shopping experience from start to finish.": "Finding products, checking details, and placing an order was incredibly easy. A great shopping experience from start to finish.",
                 }
             },
             ar: {
@@ -341,7 +353,20 @@ i18n
                     "Womenswear": "ملابس نسائية",
                     "Accessories": "إكسسوارات",
                     "Shop Now": "تسوق الآن",
-                    "Explore More": "اكتشف المزيد"
+                    "Explore More": "اكتشف المزيد",
+                    "Client Reviews": "آراء العملاء",
+                    "4.8 / 5.0 based on 124 reviews": "4.8 / 5.0 بناءً على 124 تقييمًا",
+                    "Elias V.": "إلياس ف.",
+                    "Marcus L.": "ماركوس ل.",
+                    "Sarah K.": "سارة ك.",
+                    "Verified Buyer": "مشتري موثّق",
+                    "\"Exceptional Experience.\"": "\"تجربة استثنائية.\"",
+                    "\"Beautifully Designed.\"": "\"تصميم رائع.\"",
+                    "\"Simple & Reliable.\"": "\"بسيط وموثوق.\"",
+                    "From browsing to checkout, everything feels smooth and thoughtfully designed. The website makes shopping simple and enjoyable.": "من تصفح المنتجات وحتى إتمام الطلب، كل شيء سلس ومصمم بعناية. الموقع يجعل تجربة التسوق بسيطة وممتعة.",
+                    "The website is clean, easy to navigate, and the product presentation is excellent. Everything feels premium and effortless.": "الموقع أنيق وسهل الاستخدام، وطريقة عرض المنتجات ممتازة. كل شيء يعطي إحساسًا بالفخامة والبساطة.",
+                    "Finding products, checking details, and placing an order was incredibly easy. A great shopping experience from start to finish.": "العثور على المنتجات، ومراجعة تفاصيلها، وإتمام الطلب كان سهلًا جدًا. تجربة تسوق رائعة من البداية إلى النهاية.",
+
                 }
 
 

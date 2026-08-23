@@ -6,6 +6,7 @@ import Stayuptodate from '../../components/Stayuptodate/Stayuptodate'
 import Lifecycle from '../../components/Thelifecycle/Thelifecycle'
 import CategoryShowcase from '../../components/Showcase/ShowCase'
 import Brands from '../../components/Brands/Brands'
+import Reviews from '../../components/Reviews/Reviews'
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
       <CategoryShowcase />
       <Lifecycle />
       <AboutUs />
+      <Reviews />
       <Stayuptodate />
 
     </>
