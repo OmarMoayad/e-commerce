@@ -17,6 +17,8 @@ import ForgotPassword from "./pages/ForgotPassword/ForgotPassword";
 import CodeVerification from "./pages/CodeVerification/CodeVerification";
 import NewPassword from "./pages/NewPassword/NewPassword";
 import PrivacyPolicy from "./pages/PrivacyPolicy/PrivacyPolicy";
+import TermsofService from "./pages/TermsofService/TermsofService";
+import Faq from "./pages/Faq/Faq";
 import Contactus from "./pages/Contactus/Contactus";
 import NotFound from "./pages/404/404";
 
@@ -65,12 +67,18 @@ const router = createBrowserRouter([
                 path: "/privacypolicy",
                 element: <PrivacyPolicy />,
             },
-
+            {
+                path: "/terms",
+                element: <TermsofService />,
+            },
+            {
+                path: "/faq",
+                element: <Faq />,
+            },
             {
                 path: "ForgotPassword",
                 element: <ForgotPassword />,
             },
-
             {
                 path: "/CodeVerification",
                 element: <CodeVerification />,
@@ -79,7 +87,6 @@ const router = createBrowserRouter([
                 path: "/NewPassword",
                 element: <NewPassword />,
             },
-
             {
                 path: "/profile",
                 element: <ProtectedRouter>
