@@ -28,7 +28,7 @@ export default function Reviews() {
                     <Box sx={{ display: "flex", justifyContent: "space-between", mb: 1, }}>
                         <Box>
                             <Typography sx={{ fontSize: "0.65rem", fontWeight: 700, }}>
-                                {t("Elias V.")}
+                                {t("Eng ibrahim")}
                             </Typography>
                             <Typography sx={{ fontSize: "0.5rem", color: "text.secondary", }}>
                                 {t("Verified Buyer")}
@@ -39,7 +39,7 @@ export default function Reviews() {
                         </Typography>
                     </Box>
                     <Typography sx={{ fontSize: "0.85rem", fontWeight: 700, fontStyle: "italic", mb: 1, }}>
-                        {t('"Exceptional Experience."')}
+                        {t('"the best site ever"')}
                     </Typography>
                     <Typography sx={{ fontSize: "0.62rem", lineHeight: 1.6, color: "text.secondary", }}>
                         {t("From browsing to checkout, everything feels smooth and thoughtfully designed. The website makes shopping simple and enjoyable.")}

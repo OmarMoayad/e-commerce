@@ -251,6 +251,9 @@ i18n
                     "Through our Lifecycle initiative, we provide meticulous restoration and repair services for genuine REMIX garments to extend their lifespan indefinitely.": "Through our Lifecycle initiative, we provide meticulous restoration and repair services for genuine REMIX garments to extend their lifespan indefinitely.",
                     "How should leather goods be stored?": "How should leather goods be stored?",
                     "Store leather pieces in the provided breathable dust bag in a cool, dry place away from direct heat sources and artificial light.": "Store leather pieces in the provided breathable dust bag in a cool, dry place away from direct heat sources and artificial light.",
+                    "Good Morning": "Good Morning",
+                    "Good Afternoon": "Good Afternoon",
+                    "Good Evening": "Good Evening",
                 }
             },
             ar: {
@@ -487,6 +490,9 @@ i18n
                     "Through our Lifecycle initiative, we provide meticulous restoration and repair services for genuine REMIX garments to extend their lifespan indefinitely.": "من خلال مبادرة دورة الحياة لدينا، نوفر خدمات ترميم وإصلاح دقيقة لقطع ريمكس الأصلية لإطالة عمرها الافتراضي.",
                     "How should leather goods be stored?": "كيف يجب تخزين المنتجات الجلدية؟",
                     "Store leather pieces in the provided breathable dust bag in a cool, dry place away from direct heat sources and artificial light.": "احفظ القطع الجلدية في كيس القماش المخصص في مكان بارد وجاف بعيدًا عن مصادر الحرارة المباشرة والإضاءة القوية.",
+                    "Good Morning": "صباح الخير",
+                    "Good Afternoon": "مساء الخير",
+                    "Good Evening": "مساء الخير",
                 }
             }
         },

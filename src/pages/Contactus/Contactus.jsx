@@ -2,13 +2,31 @@ import React from "react";
 import { Box, Typography, TextField, Button, Container, Divider, MenuItem, } from "@mui/material";
 import { useTranslation } from "react-i18next";
 import map from "../../assets/Map.png";
+import Alert from "../../components/Alert/Alert";
+import { useNavigate } from "react-router-dom";
+import { useState } from "react";
 
 export default function ContactUs() {
     const { t } = useTranslation();
+    const navigate = useNavigate();
+    const [alertOpen, setAlertOpen] = useState(false);
+    const [alertMessage, setAlertMessage] = useState("");
+    const [alertType, setAlertType] = useState("success");
+
+    const handleSendMessage = (e) => {
+        if (e) e.preventDefault();
+        setAlertMessage(t("Message sent successfully!"));
+        setAlertType("success");
+        setAlertOpen(true);
+        setTimeout(() => {
+            navigate("/");
+        }, 2000);
+    };
 
     return (
         <Box sx={{ minHeight: "100vh", py: { xs: 6, md: 9 }, }}>
             <Container maxWidth="lg">
+                <Alert open={alertOpen} setOpen={setAlertOpen} message={alertMessage} severity={alertType} />
                 <Box sx={{ mb: { xs: 5, md: 8 } }}>
                     <Typography variant="h3" sx={{ fontWeight: 700, fontSize: { xs: "2rem", md: "2.6rem" }, mb: 2, }}>
                         {t("Contact Us")}
@@ -18,7 +36,7 @@ export default function ContactUs() {
                     </Typography>
                 </Box>
                 <Box sx={{ display: "grid", gridTemplateColumns: { xs: "1fr", md: "minmax(0, 2fr) minmax(260px, 1fr)", }, gap: { xs: 6, md: 10 }, }}>
-                    <Box component="form" sx={{ maxWidth: 650, }}>
+                    <Box component="form" onSubmit={handleSendMessage} sx={{ maxWidth: 650, }}>
                         <Box sx={{ display: "grid", gridTemplateColumns: { xs: "1fr", sm: "1fr 1fr", }, gap: 2, mb: 3, }}>
                             <Box>
                                 <Typography sx={{ fontSize: "0.65rem", fontWeight: 600, mb: 1, }}>
@@ -58,7 +76,7 @@ export default function ContactUs() {
                             </Typography>
                             <TextField fullWidth multiline rows={5} sx={{ "& .MuiOutlinedInput-root": { borderRadius: 0, fontSize: "0.75rem", }, }} />
                         </Box>
-                        <Button type="submit" variant="contained" sx={{ bgcolor: "black", color: "white", px: 4, py: 1.2, minWidth: 140, fontSize: "0.65rem", fontWeight: 700, letterSpacing: 1, borderRadius: 1, "&:hover": { bgcolor: "#222", }, }}>
+                        <Button type="submit" onClick={handleSendMessage} variant="contained" sx={{ bgcolor: "black", color: "white", px: 4, py: 1.2, minWidth: 140, fontSize: "0.65rem", fontWeight: 700, letterSpacing: 1, borderRadius: 1, "&:hover": { bgcolor: "#222", }, }}>
                             {t("SEND MESSAGE")}
                         </Button>
                     </Box>
